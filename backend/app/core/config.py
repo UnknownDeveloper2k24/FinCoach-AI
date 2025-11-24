@@ -1,17 +1,18 @@
 """Application configuration"""
 from pydantic_settings import BaseSettings
 from typing import List
+import json
 
 class Settings(BaseSettings):
     """Application settings"""
     
     # App
     APP_NAME: str = "FINCoach AI Backend"
-    APP_VERSION: str = "1.0.0"
+    APP_VERSION: str = "1.3.0"
     DEBUG: bool = False
     
     # Database
-    DATABASE_URL: str = "postgresql://postgres:postgres@localhost:5432/fincoach_db"
+    DATABASE_URL: str = "sqlite:///./fincoach.db"
     
     # Security
     SECRET_KEY: str = "your-secret-key-change-in-production"
@@ -20,7 +21,7 @@ class Settings(BaseSettings):
     REFRESH_TOKEN_EXPIRE_DAYS: int = 7
     
     # CORS
-    CORS_ORIGINS: List[str] = ["http://localhost:3000", "http://localhost:8000"]
+    CORS_ORIGINS: List[str] = ["http://localhost:3000", "http://localhost:5173", "http://localhost:8000"]
     
     # JWT
     JWT_SECRET_KEY: str = "your-jwt-secret-key"
