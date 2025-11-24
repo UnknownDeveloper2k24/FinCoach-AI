@@ -7,6 +7,8 @@ import Dashboard from './pages/Dashboard';
 import Analytics from './pages/Analytics';
 import Predictions from './pages/Predictions';
 import MultiAgent from './pages/MultiAgent';
+import Recommendations from './pages/Recommendations';
+import PatternRecognition from './pages/PatternRecognition';
 import Navbar from './components/Navbar';
 
 function ProtectedRoute({ children }) {
@@ -52,6 +54,22 @@ export default function App() {
           element={
             <ProtectedRoute>
               <MultiAgent />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/recommendations"
+          element={
+            <ProtectedRoute>
+              <Recommendations />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/patterns"
+          element={
+            <ProtectedRoute>
+              <PatternRecognition />
             </ProtectedRoute>
           }
         />

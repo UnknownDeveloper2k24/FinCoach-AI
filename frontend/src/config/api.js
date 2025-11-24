@@ -79,6 +79,20 @@ export const API_ENDPOINTS = {
     PORTFOLIO_OPTIMIZATION: `${API_BASE_URL}/multi-agent/portfolio-optimization`,
     USER_COACHING: `${API_BASE_URL}/multi-agent/user-coaching`,
   },
+  // Intelligent Recommendations
+  RECOMMENDATIONS: {
+    PERSONALIZED: `${API_BASE_URL}/recommendations/personalized`,
+    CATEGORY: (category) => `${API_BASE_URL}/recommendations/category/${category}`,
+  },
+  // Pattern Recognition
+  PATTERNS: {
+    ALL: `${API_BASE_URL}/patterns/all`,
+    SPENDING: `${API_BASE_URL}/patterns/spending`,
+    TEMPORAL: `${API_BASE_URL}/patterns/temporal`,
+    BEHAVIORAL: `${API_BASE_URL}/patterns/behavioral`,
+    ANOMALIES: `${API_BASE_URL}/patterns/anomalies`,
+    CORRELATIONS: `${API_BASE_URL}/patterns/correlations`,
+  },
 };
 
 export default API_BASE_URL;

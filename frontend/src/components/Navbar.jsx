@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuthStore } from '../store/authStore';
-import { LogOut, Menu, BarChart3, TrendingUp, Bot } from 'lucide-react';
+import { LogOut, Menu, BarChart3, TrendingUp, Bot, Lightbulb, Activity } from 'lucide-react';
 
 export default function Navbar() {
   const navigate = useNavigate();
@@ -21,7 +21,7 @@ export default function Navbar() {
             <h1 className="text-2xl font-bold">FINCoach AI</h1>
           </div>
 
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             <a href="/dashboard" className="hover:text-blue-200 transition flex items-center space-x-1">
               <span>Dashboard</span>
             </a>
@@ -37,10 +37,18 @@ export default function Navbar() {
               <Bot className="w-4 h-4" />
               <span>AI Agents</span>
             </a>
+            <a href="/recommendations" className="hover:text-blue-200 transition flex items-center space-x-1">
+              <Lightbulb className="w-4 h-4" />
+              <span>Recommendations</span>
+            </a>
+            <a href="/patterns" className="hover:text-blue-200 transition flex items-center space-x-1">
+              <Activity className="w-4 h-4" />
+              <span>Patterns</span>
+            </a>
           </div>
 
           <div className="flex items-center space-x-4">
-            <span className="text-sm">{user?.full_name}</span>
+            <span className="text-sm hidden sm:inline">{user?.full_name}</span>
             <button
               onClick={handleLogout}
               className="flex items-center space-x-2 bg-red-500 hover:bg-red-600 px-4 py-2 rounded-lg transition"
@@ -72,6 +80,14 @@ export default function Navbar() {
             <a href="/multi-agent" className="block hover:text-blue-200 transition flex items-center space-x-1">
               <Bot className="w-4 h-4" />
               <span>AI Agents</span>
+            </a>
+            <a href="/recommendations" className="block hover:text-blue-200 transition flex items-center space-x-1">
+              <Lightbulb className="w-4 h-4" />
+              <span>Recommendations</span>
+            </a>
+            <a href="/patterns" className="block hover:text-blue-200 transition flex items-center space-x-1">
+              <Activity className="w-4 h-4" />
+              <span>Patterns</span>
             </a>
           </div>
         )}
