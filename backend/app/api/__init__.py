@@ -11,6 +11,11 @@ from . import analytics
 from . import mobile
 from . import notifications
 from . import social
+from . import advanced_analytics
+from . import predictive_insights
+from . import multi_agent_system
+from . import intelligent_recommendations
+from . import pattern_recognition
 
 __all__ = [
     "auth",
@@ -24,5 +29,10 @@ __all__ = [
     "analytics",
     "mobile",
     "notifications",
-    "social"
+    "social",
+    "advanced_analytics",
+    "predictive_insights",
+    "multi_agent_system",
+    "intelligent_recommendations",
+    "pattern_recognition"
 ]

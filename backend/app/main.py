@@ -4,7 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from contextlib import asynccontextmanager
 
-from app.api import auth, users, transactions, jars, goals, alerts, agents, ml_modules, analytics, mobile, notifications, social, advanced_analytics, predictive_insights, multi_agent_system
+from app.api import auth, users, transactions, jars, goals, alerts, agents, ml_modules, analytics, mobile, notifications, social, advanced_analytics, predictive_insights, multi_agent_system, intelligent_recommendations, pattern_recognition
 from app.core.config import settings
 from app.core.database import engine, Base
 
@@ -21,8 +21,8 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(
     title="FINCoach AI Backend",
-    description="AI-powered personal finance management system with Advanced Analytics, Multi-Agent AI System, Predictive Insights, Mobile Integration, Real-time Notifications, and Social Features",
-    version="1.2.0",
+    description="AI-powered personal finance management system with Advanced Analytics, Multi-Agent AI System, Predictive Insights, Mobile Integration, Real-time Notifications, Intelligent Recommendations, and Pattern Recognition",
+    version="1.3.0",
     lifespan=lifespan
 )
 
@@ -58,13 +58,17 @@ app.include_router(mobile.router, tags=["Mobile Integration"])
 app.include_router(notifications.router, tags=["Real-time Notifications"])
 app.include_router(social.router, tags=["Social Features"])
 
+# Include routers - New ML Features (Phase 3)
+app.include_router(intelligent_recommendations.router, tags=["Intelligent Recommendations"])
+app.include_router(pattern_recognition.router, tags=["Pattern Recognition"])
+
 @app.get("/health")
 async def health_check():
     """Health check endpoint"""
     return {
         "status": "healthy",
         "service": "FINCoach AI Backend",
-        "version": "1.2.0"
+        "version": "1.3.0"
     }
 
 @app.get("/")
@@ -72,7 +76,7 @@ async def root():
     """Root endpoint"""
     return {
         "message": "Welcome to FINCoach AI Backend",
-        "version": "1.2.0",
+        "version": "1.3.0",
         "docs": "/docs",
         "redoc": "/redoc",
         "features": {
@@ -97,7 +101,9 @@ async def root():
                 "Transaction Categorizer",
                 "Anomaly Detector",
                 "Advanced Analytics",
-                "Predictive Insights"
+                "Predictive Insights",
+                "Intelligent Recommender",
+                "Pattern Recognition"
             ],
             "advanced_features": [
                 "Multi-Agent AI System",
@@ -105,7 +111,9 @@ async def root():
                 "Predictive Insights",
                 "Mobile App Integration",
                 "Real-time Notifications",
-                "Social Features"
+                "Social Features",
+                "Intelligent Recommendations",
+                "Pattern Recognition & Anomaly Detection"
             ]
         },
         "endpoints": {
@@ -114,7 +122,9 @@ async def root():
             "multi_agent_system": "/api/v1/multi-agent",
             "mobile": "/api/v1/mobile",
             "notifications": "/api/v1/notifications",
-            "social": "/api/v1/social"
+            "social": "/api/v1/social",
+            "intelligent_recommendations": "/api/v1/recommendations",
+            "pattern_recognition": "/api/v1/patterns"
         }
     }
 
