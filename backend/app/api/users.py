@@ -5,12 +5,13 @@ from app.core.database import get_db
 from app.core.security import decode_token
 from app.models.user import User
 from app.schemas.user import UserResponse, UserUpdate
-from fastapi.security import HTTPBearer, HTTPAuthCredentials
+from fastapi.security import HTTPBearer
+from fastapi.security.http import HTTPAuthorizationCredentials
 
 router = APIRouter()
 security = HTTPBearer()
 
-def get_current_user(credentials: HTTPAuthCredentials = Depends(security), db: Session = Depends(get_db)) -> User:
+def get_current_user(credentials: HTTPAuthorizationCredentials = Depends(security), db: Session = Depends(get_db)) -> User:
     """Get current authenticated user"""
     token = credentials.credentials
     payload = decode_token(token)

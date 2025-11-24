@@ -1,12 +1,12 @@
 """API routes for AI Agents"""
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-from app.database import get_db
+from app.core.database import get_db
 from app.agents.financial_advisor import FinancialAdvisor
 from app.agents.risk_assessor import RiskAssessor
 from app.agents.prediction_agent import PredictionAgent
 from app.agents.coaching_agent import CoachingAgent
-from app.security import get_current_user
+from app.api.users import get_current_user
 
 router = APIRouter(prefix="/api/v1/agents", tags=["agents"])
 

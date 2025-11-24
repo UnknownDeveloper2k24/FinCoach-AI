@@ -2,7 +2,7 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from app.core.database import get_db
-from app.core.security import get_current_user
+from app.api.users import get_current_user
 from app.ml_modules.pattern_recognition import PatternRecognition
 from app.models.user import User
 
