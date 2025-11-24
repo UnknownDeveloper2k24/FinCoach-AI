@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuthStore } from '../store/authStore';
-import { LogOut, Menu } from 'lucide-react';
+import { LogOut, Menu, BarChart3, TrendingUp, Bot } from 'lucide-react';
 
 export default function Navbar() {
   const navigate = useNavigate();
@@ -22,10 +22,21 @@ export default function Navbar() {
           </div>
 
           <div className="hidden md:flex items-center space-x-8">
-            <a href="/dashboard" className="hover:text-blue-200 transition">Dashboard</a>
-            <a href="#" className="hover:text-blue-200 transition">Transactions</a>
-            <a href="#" className="hover:text-blue-200 transition">Goals</a>
-            <a href="#" className="hover:text-blue-200 transition">Jars</a>
+            <a href="/dashboard" className="hover:text-blue-200 transition flex items-center space-x-1">
+              <span>Dashboard</span>
+            </a>
+            <a href="/analytics" className="hover:text-blue-200 transition flex items-center space-x-1">
+              <BarChart3 className="w-4 h-4" />
+              <span>Analytics</span>
+            </a>
+            <a href="/predictions" className="hover:text-blue-200 transition flex items-center space-x-1">
+              <TrendingUp className="w-4 h-4" />
+              <span>Predictions</span>
+            </a>
+            <a href="/multi-agent" className="hover:text-blue-200 transition flex items-center space-x-1">
+              <Bot className="w-4 h-4" />
+              <span>AI Agents</span>
+            </a>
           </div>
 
           <div className="flex items-center space-x-4">
@@ -50,9 +61,18 @@ export default function Navbar() {
         {isOpen && (
           <div className="md:hidden pb-4 space-y-2">
             <a href="/dashboard" className="block hover:text-blue-200 transition">Dashboard</a>
-            <a href="#" className="block hover:text-blue-200 transition">Transactions</a>
-            <a href="#" className="block hover:text-blue-200 transition">Goals</a>
-            <a href="#" className="block hover:text-blue-200 transition">Jars</a>
+            <a href="/analytics" className="block hover:text-blue-200 transition flex items-center space-x-1">
+              <BarChart3 className="w-4 h-4" />
+              <span>Analytics</span>
+            </a>
+            <a href="/predictions" className="block hover:text-blue-200 transition flex items-center space-x-1">
+              <TrendingUp className="w-4 h-4" />
+              <span>Predictions</span>
+            </a>
+            <a href="/multi-agent" className="block hover:text-blue-200 transition flex items-center space-x-1">
+              <Bot className="w-4 h-4" />
+              <span>AI Agents</span>
+            </a>
           </div>
         )}
       </div>

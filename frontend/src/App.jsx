@@ -4,6 +4,9 @@ import { useAuthStore } from './store/authStore';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
+import Analytics from './pages/Analytics';
+import Predictions from './pages/Predictions';
+import MultiAgent from './pages/MultiAgent';
 import Navbar from './components/Navbar';
 
 function ProtectedRoute({ children }) {
@@ -25,6 +28,30 @@ export default function App() {
           element={
             <ProtectedRoute>
               <Dashboard />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/analytics"
+          element={
+            <ProtectedRoute>
+              <Analytics />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/predictions"
+          element={
+            <ProtectedRoute>
+              <Predictions />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/multi-agent"
+          element={
+            <ProtectedRoute>
+              <MultiAgent />
             </ProtectedRoute>
           }
         />

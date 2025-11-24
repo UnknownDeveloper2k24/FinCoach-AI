@@ -51,6 +51,34 @@ export const API_ENDPOINTS = {
     DELETE: (id) => `${API_BASE_URL}/alerts/${id}`,
     SUMMARY: `${API_BASE_URL}/alerts/stats/summary`,
   },
+  // Advanced Analytics
+  ANALYTICS: {
+    SPENDING_PATTERNS: `${API_BASE_URL}/analytics/spending-patterns`,
+    INCOME_TRENDS: `${API_BASE_URL}/analytics/income-trends`,
+    SAVINGS_RATE: `${API_BASE_URL}/analytics/savings-rate`,
+    BUDGET_VARIANCE: `${API_BASE_URL}/analytics/budget-variance`,
+    CASH_FLOW: `${API_BASE_URL}/analytics/cash-flow`,
+    COMPREHENSIVE_REPORT: `${API_BASE_URL}/analytics/comprehensive-report`,
+  },
+  // Predictive Insights
+  PREDICTIONS: {
+    SPENDING_FORECAST: `${API_BASE_URL}/predictions/spending-forecast`,
+    INCOME_FORECAST: `${API_BASE_URL}/predictions/income-forecast`,
+    SAVINGS_PROJECTION: `${API_BASE_URL}/predictions/savings-projection`,
+    GOAL_ACHIEVEMENT: `${API_BASE_URL}/predictions/goal-achievement`,
+    FINANCIAL_HEALTH: `${API_BASE_URL}/predictions/financial-health`,
+    ANOMALY_DETECTION: `${API_BASE_URL}/predictions/anomaly-detection`,
+    PREDICTION_HISTORY: `${API_BASE_URL}/predictions/prediction-history`,
+  },
+  // Multi-Agent System
+  MULTI_AGENT: {
+    EXECUTE_TASK: `${API_BASE_URL}/multi-agent/execute-task`,
+    SYSTEM_STATUS: `${API_BASE_URL}/multi-agent/system-status`,
+    AGENT_HISTORY: `${API_BASE_URL}/multi-agent/agent-history`,
+    FINANCIAL_PLANNING: `${API_BASE_URL}/multi-agent/financial-planning`,
+    PORTFOLIO_OPTIMIZATION: `${API_BASE_URL}/multi-agent/portfolio-optimization`,
+    USER_COACHING: `${API_BASE_URL}/multi-agent/user-coaching`,
+  },
 };
 
 export default API_BASE_URL;
